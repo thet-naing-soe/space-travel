@@ -135,6 +135,10 @@ select {
   gap: var(--gap, 1rem);
 }
 
+.d-block {
+  display: block;
+}
+
 .flow > *:where(:not(:first-child)) {
   margin-top: var(--flow-space, 1rem);
 }
@@ -146,12 +150,25 @@ select {
 }
 
 .grid-container {
+  text-align: center;
   display: grid;
+  place-items: center;
+  padding-inline: 1rem;
   border: 5px solid green;
+}
+
+.grid-container * {
+  max-width: 50ch;
+}
+
+.grid-container--home {
+  padding-bottom: max(6rem, 20vh);
+  align-items: end;
 }
 
 @media (min-width: 45em) {
   .grid-container {
+    text-align: left;
     column-gap: var(--container-gap, 2rem);
     grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
         2rem,
@@ -167,6 +184,14 @@ select {
     grid-column: 3;
     outline: 1px solid yellow;
   }
+}
+
+.grid-container > *:first-child {
+  outline: 1px solid red;
+}
+
+.grid-container > *:last-child {
+  outline: 1px solid yellow;
 }
 
 .sr-only {
@@ -279,6 +304,7 @@ select {
 /* ------------------- */
 
 .large-button {
+  font-size: 2rem;
   position: relative;
   z-index: 1;
   display: inline-grid;
