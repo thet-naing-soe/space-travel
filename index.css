@@ -196,6 +196,21 @@ select {
   border: 0;
 }
 
+.skip-to-content {
+  position: absolute;
+  background: hsl(var(--clr-light));
+  color: hsl(var(--clr-dark));
+  padding: .5em 1em;
+  margin-inline: auto;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in;
+  z-index: 9999                               ;
+}
+
+.skip-to-content:focus {
+  transform: translateY(0);
+}
+
 /* colors */
 
 .bg-dark {
@@ -422,7 +437,7 @@ select {
     width: 100%;
     order: 1;
     margin-right: -2.5rem;
-    z-index: 100;
+    /* z-index: 100; */
   }
 
   nav {
